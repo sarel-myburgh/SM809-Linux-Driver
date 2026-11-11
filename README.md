@@ -20,10 +20,16 @@ Beyond the vendor tool it can:
 
 ## AppImage (GUI)
 
+Download `SM809-x86_64.AppImage` from the
+[latest release](https://github.com/sarel-myburgh/SM809-Linux-Driver/releases/latest), then:
+
 ```bash
-./build-appimage.sh                    # → dist/SM809-x86_64.AppImage
-./dist/SM809-x86_64.AppImage           # opens the GUI
+sudo apt install python3-pyqt6         # the AppImage uses the system's Python and PyQt6
+chmod +x SM809-x86_64.AppImage
+./SM809-x86_64.AppImage                # opens the GUI
 ```
+
+Or build it yourself: `./build-appimage.sh` → `dist/SM809-x86_64.AppImage`.
 
 The AppImage contains the sm809 code and uses the system's `python3` and
 PyQt6 (`sudo apt install python3-pyqt6`). Any argument runs the command-line
