@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+build/
+dist/
+# Vendor firmware package: not ours to redistribute
+*.rar

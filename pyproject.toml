@@ -1,0 +1,19 @@
+[project]
+name = "sm809"
+version = "0.1.0"
+description = "Configure the Solakaka SM809 Pro mouse on Linux (wired, 2.4G, Bluetooth)"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+sm809 = "sm809.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["sm809"]
+
+[tool.setuptools.package-data]
+sm809 = ["default.toml", "70-sm809.rules", "buttons.png", "icon.png"]

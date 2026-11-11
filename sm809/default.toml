@@ -1,0 +1,53 @@
+# SM809 Pro profile. Matches the vendor tool's factory defaults for the 026E/026F
+# revision (the 809x revision ships side3-8 as 3,5,6,7,8 and can remap the wheel).
+# Apply with: sm809 apply <name>   (buttons: see `sm809 actions`)
+
+[dpi]
+stages = [1200, 1600, 2400, 3200, 6400, 16000]  # 1-6 stages, multiples of 100
+current = 2                                     # 1-based stage to start on
+colors = ["#ff0000", "#0000ff", "#00ff00", "#ffff00", "#00ffff", "#ff00ff"]
+
+[performance]
+polling_rate = 500      # 125, 250, 500, 1000 (2000/4000/8000 if the device supports it)
+lift_off_mm = 2         # 1 or 2
+angle_snap = false
+motion_sync = true
+ripple_control = false
+
+[power]
+sleep = 20              # 1-20 (vendor UI slider, units unspecified)
+motion_wake = true
+motion_lighting = true  # vendor label: "lighting off while mouse move"
+
+[lighting]
+mode = "colorful-streaming"  # off, stars-twinkle, colorful-streaming, seven-color-stretch,
+                             # seven-color-flashing, colorful-breath, explosion-flash,
+                             # colorful-coverage, static
+color = "#00ffff"            # used by "static"
+
+[buttons]
+side1 = "win+d"
+side2 = "2"
+side3 = "1"
+side4 = "forward"
+side5 = "4"
+side6 = "3"
+side7 = "6"
+side8 = "5"
+side9 = "back"
+edge-front = "fire:16:2"
+edge-back = "my-computer"
+left = "left"
+right = "right"
+middle = "middle"
+dpi-up = "dpi-up"
+dpi-down = "dpi-down"
+wheel-up = "wheel-up"
+wheel-down = "wheel-down"
+
+# Type a string:  side3 = "text:my.username"
+# Macros: bind with  side3 = "macro:hello"
+# [macros.hello]
+# mode = "once"        # once | repeat (repeat = N) | hold (while held) | toggle (until any key)
+# repeat = 1
+# steps = ["tap:h", "tap:i", "delay:100", "down:shift", "tap:1", "up:shift"]

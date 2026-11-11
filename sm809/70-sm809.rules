@@ -1,0 +1,7 @@
+# Solakaka SM809 Pro: give the logged-in user access to the vendor hidraw
+# interface over USB (026E or 809E), the 2.4G receiver (026F or 809F)
+# and Bluetooth (809D). Matching on the HID id covers all three transports.
+KERNEL=="hidraw*", SUBSYSTEMS=="hid", KERNELS=="*:04F3:809[DEF].*", TAG+="uaccess"
+KERNEL=="hidraw*", SUBSYSTEMS=="hid", KERNELS=="*:04F3:026[EF].*", TAG+="uaccess"
+# The 026E revision's Bluetooth ID is not published; allow any Elan device on the Bluetooth bus.
+KERNEL=="hidraw*", SUBSYSTEMS=="hid", KERNELS=="0005:04F3:*", TAG+="uaccess"
